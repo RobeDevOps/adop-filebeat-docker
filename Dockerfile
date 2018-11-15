@@ -5,8 +5,8 @@ LABEL MAINTAINER_EMAIL="rcardenas20@gmail.com"
 
 ENV FILEBEAT_HOME /usr/share/filebeat
 
+USER root
 RUN rm -Rf ${FILEBEAT_HOME}/modules.d
-
 USER filebeat
 ADD ./config/filebeat.yml ${FILEBEAT_HOME}/filebeat.yml
 USER root
