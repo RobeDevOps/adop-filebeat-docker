@@ -5,11 +5,11 @@ if [ "$1" = 'start' ]; then
 
     getRunningContainers() {
     curl --no-buffer -s -XGET --unix-socket /tmp/docker.sock http:/containers/json | python -c "
-    import json, sys
-    containers=json.loads(sys.stdin.readline())
-    for container in containers:
-        print(container)
-    "
+import json, sys
+containers=json.loads(sys.stdin.readline())
+for container in containers:
+    print(container)
+"
     }
 
     ${FILEBEAT_HOME}/filebeat -e -v &
