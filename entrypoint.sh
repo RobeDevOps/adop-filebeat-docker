@@ -8,7 +8,7 @@ if [ "$1" = 'start' ]; then
 import json, sys
 containers=json.loads(sys.stdin.readline())
 for container in containers:
-    println(container)
+    printcontainer)
 "
     }
 
@@ -16,6 +16,7 @@ for container in containers:
     while true; do
         CONTAINERS=`getRunningContainers`
         echo "$CONTAINERS"
+        echo ""
         sleep 5
     done
 else
