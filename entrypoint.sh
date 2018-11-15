@@ -8,7 +8,7 @@ if [ "$1" = 'start' ]; then
 import json, sys
 containers=json.loads(sys.stdin.readline())
 for container in containers:
-    printcontainer)
+    print(container)
 "
     }
 
