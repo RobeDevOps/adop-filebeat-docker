@@ -1,11 +1,16 @@
 ---
-filebeat.input:
-  - type: stdin
-    tags: ["docker"]
+filebeat.inputs:
+- type: log 
+  tags: ['docker-logs']
+  json.keys_under_root: true
+  json.add_error_key: true
+  paths:
+    - "${LOGS_PATH}*.json"
+  
 
 processors:
 - add_cloud_metadata:
 
 #----------------------------- Logstash output --------------------------------
 output.logstash:
-  hosts: ["logstash:5055"]
+  hosts: ["${LOGSTASH_HOST}"]
