@@ -1,0 +1,11 @@
+---
+filebeat.input:
+  - type: stdin
+    tags: ["docker"]
+
+processors:
+- add_cloud_metadata:
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  hosts: ["logstash:5055"]
