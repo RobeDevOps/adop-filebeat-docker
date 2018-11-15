@@ -8,7 +8,7 @@ ENV FILEBEAT_HOME /usr/share/filebeat
 USER root
 RUN rm -Rf ${FILEBEAT_HOME}/modules.d
 USER filebeat
-ADD ./config/filebeat.yml ${FILEBEAT_HOME}/filebeat.yml
+ADD filebeat.yml ${FILEBEAT_HOME}/filebeat.yml
 USER root
 
 ADD  entrypoint.sh /entrypoint.sh
