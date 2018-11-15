@@ -16,7 +16,6 @@ if [ "$1" = 'start' ]; then
     while true; do
         CONTAINERS=`getRunningContainers`
         echo "$CONTAINERS\n"
-        done
         sleep 5
     done
 else
