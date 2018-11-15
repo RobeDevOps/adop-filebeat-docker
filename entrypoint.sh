@@ -8,14 +8,14 @@ if [ "$1" = 'start' ]; then
 import json, sys
 containers=json.loads(sys.stdin.readline())
 for container in containers:
-    print(container)
+    println(container)
 "
     }
 
     ${FILEBEAT_HOME}/filebeat -e -v &
     while true; do
         CONTAINERS=`getRunningContainers`
-        echo "$CONTAINERS\n"
+        echo "$CONTAINERS"
         sleep 5
     done
 else
