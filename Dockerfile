@@ -8,6 +8,7 @@ ADD filebeat.yml ${FILEBEAT_HOME}/filebeat.yml
 
 USER root
 RUN chown root:filebeat ${FILEBEAT_HOME}/filebeat.yml
+RUN chmod go-w /usr/share/filebeat/filebeat.yml
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
